@@ -56,18 +56,37 @@ end
 
 def hello(name)
   # YOUR CODE HERE
-
-  
+  str = "Hello, "
+  return (str += name)
 end
 
 def starts_with_consonant?(string)
   # YOUR CODE HERE
+  if (string.length() == 0)
+    return false
+  end
+
+  firstch = string.chr
+  firstch = firstch.downcase
+  if(firstch == "a" || firstch == "e" || firstch == "i" || firstch == "o" || firstch == "u" )
+    return false
+  else 
+    return true
+  end
 end
 
 def binary_multiple_of_4?(string)
   # YOUR CODE HERE
-end
+  if (string.length() == 0 || string.length() == 1 || string.length() == 2)
+    return false
+  end
 
+  if ((string.to_i(2))%4==0) 
+    return true
+  else 
+    return false
+  end
+end
 
 
 
@@ -103,7 +122,6 @@ class BookInStock
   def price_as_string()
     return ("$"+"%0.2f" % [@price.to_s])
   end
-
 end
 
 
@@ -112,5 +130,8 @@ end
 #puts(sum([3]))
 #puts(max_2_sum([8]))
 #puts(sum_to_n?([2,1,5], 4))
-#object = BookInStock.new("2",3)
+#object = BookInStock.new("2",3.82)
 #puts(object.price_as_string())
+#puts(hello("Harsha"))
+#puts(starts_with_consonant?("Harsha"))
+#puts(binary_multiple_of_4?("10a1"))
